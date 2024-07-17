@@ -61,11 +61,10 @@ export default class Login extends Component {
                 "email": this.state.email,
                 "password": this.state.password
             }
-            loginAPI.login(data).then(response => {
-                    toast.success("Login Successfully");
+            loginAPI.signup(data).then(response => {
+                    toast.success("Signup Successfully");
                     Cookies.set("access_token_admin", response?.data?.token);
-                    // localStorage.setItem("UserDetails", JSON?.stringify(response?data));
-                    Router.push('/dashboard')
+                    Router.push('/');
             }).catch(error => {
                 toast.error('Invalid User ID & Password.', {
                     autoClose: 5000,
@@ -79,7 +78,7 @@ export default class Login extends Component {
         return (
             <div data-component='login'>
                 <div className="admin-login">
-                    <span>login</span>
+                    <span>signup</span>
                 </div>
                 <div className="login-form">
                     <label>Email<span className="mandatory-star">*</span></label>
@@ -100,12 +99,12 @@ export default class Login extends Component {
                     />
                 </div>
                 <div className="custom-btn " onClick={() => this.logIn()}>
-                    <span>Login </span>
+                    <span>Signup </span>
                     <ArrowForwardIosIcon className='arrow-icon' />
                 </div>
 
-                <div className="custom-btn mt-4" onClick={() => Router.push("/signup")}>
-                    <span>Go to Signup </span>
+                <div className="custom-btn mt-4" onClick={() => Router.push("/")}>
+                    <span>Go to Login </span>
                     <ArrowForwardIosIcon className='arrow-icon' />
                 </div>
 

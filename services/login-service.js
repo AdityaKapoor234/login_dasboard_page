@@ -1,6 +1,5 @@
 import axios from "axios";
-import {LOGIN,ADMIN_LOGIN} from "../utils/constant";
-import cookie from "js-cookie";
+import { LOGIN, SIGNUP } from "../utils/constant";
 
 
 export class loginAPI {
@@ -8,23 +7,21 @@ export class loginAPI {
     static login(data) {
         const httpOptions = {
             headers: {
-                'Content-Type': 'application/json',           
+                'Content-Type': 'application/json',
             }
         };
-        return axios.post(`${LOGIN}`,data,httpOptions)
+        return axios.post(`${LOGIN}`, data, httpOptions)
     }
 
-    static adminLogin() {
-        const  token = cookie.get('access_token_admin');
+    static signup(data) {
         const httpOptions = {
             headers: {
-                'Content-Type': 'application/json', 
-                'Authorization': `Bearer ${token} `          
+                'Content-Type': 'application/json',
             }
         };
-        return axios.get(`${ADMIN_LOGIN}`,httpOptions)
+        return axios.post(`${SIGNUP}`, data, httpOptions)
     }
 
 
 }
-export default loginAPI ;
+export default loginAPI;

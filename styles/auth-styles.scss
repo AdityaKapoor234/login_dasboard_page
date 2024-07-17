@@ -1,27 +1,104 @@
 @import "variables";
 
 .auth-layout-body {
-  .auth-layout-container {
-    height: 100vh;
-  }
-  .auth-layout-row {
-    .auth-margin {
-      margin: 3rem 0rem 2rem 0rem;
+    .auth-layout-container {
+        height: 100vh;
     }
-    height: 100vh;
-    > div {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+
+    .auth-layout-row {
+        .auth-margin {
+            margin: 3rem 0rem 2rem 0rem;
+        }
+
+        height: 100vh;
+
+        >div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-hero-container {
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+
+            .img-logo {
+                margin: 1rem 0rem;
+            }
+        }
     }
-    .auth-hero-container {
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      .img-logo {
-        margin: 1rem 0rem;
-      }
+}
+
+[data-component="login"] {
+    .admin-login {
+        display: flex;
+        justify-content: center;
+        color: $clr-dark-orange;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
     }
-  }
+
+    .login-form,
+    .fc-form-group {
+        margin: 0;
+        padding: 0 0 20px 0;
+        display: block;
+        font-size: 0.9rem;
+
+        label {
+            color: $clr-label-name;
+            padding: 0 0 6px 0;
+            margin: 0;
+        }
+
+        input {
+            border: 1px solid #8090b4;
+            width: 100%;
+            padding: 10px;
+            height: 40px;
+            color: $clr-label-name;
+        }
+
+        input::placeholder {
+            color: $clr-label-name;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+
+    .signup-check {
+        display: flex;
+        font-size: 0.8rem;
+        padding: 0 0 15px 0;
+        color: $clr-label-name;
+
+        label {
+            padding: 12px 0 0 0;
+            margin: 0;
+
+            a {
+                cursor: pointer;
+                text-decoration: inherit !important;
+                color: $clr-dark-blue;
+                font-weight: 500;
+
+                &:hover,
+                &:focus {
+                    color: $clr-dark-blue;
+                }
+            }
+        }
+    }
+
+    .custom-btn {
+        .arrow-icon {
+            font-size: 1.2rem;
+        }
+    }
 }
